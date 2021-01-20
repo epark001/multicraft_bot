@@ -1,9 +1,12 @@
 import discord
 from discord.ext import commands
 import configparser
+import os
 
+dir = os.path.dirname(__file__)
+print(dir)
 config = configparser.ConfigParser()
-config.read('config/config.ini')
+config.read(os.path.join(dir,'config/config.ini'))
 TOKEN = config['Discord']['token']
 description = '''test bot'''
 bot = commands.Bot(command_prefix='?', description=description)
