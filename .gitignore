@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 #Config Files
-/discord_py/config/config.ini
+discord_py/config/*.ini
 
 # C extensions
 *.so
