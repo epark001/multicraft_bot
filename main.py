@@ -1,7 +1,8 @@
 import discord
 from discord.ext import commands
 
-TOKEN = 'ODAxMjMyNTU5NDE3MDY1NTAy.YAdr-A.qN1UqomZacUGcdYV-dqQws8s3vo'
+config.read('config.ini')
+TOKEN = config['Discord']['token']
 description = '''test bot'''
 bot = commands.Bot(command_prefix='?', description=description)
 
