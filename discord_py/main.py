@@ -1,8 +1,15 @@
 import discord
 from discord.ext import commands
 import configparser
+from time import gmtime, strftime
 import os
 
+#startup sequence
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print("---------------------")
+#print("|2021-01-24 22:11:56|"
+print("|"+strftime("%Y-%m-%d %H:%M:%S",gmtime())+"|")
+print("---------------------")
 dir = os.path.dirname(__file__)
 print(dir)
 config = configparser.ConfigParser()
@@ -21,11 +28,13 @@ async def on_ready():
 @bot.command()
 async def hello(ctx):
 	"""Says world"""
+	print("hello received")
 	await ctx.send("world")
 
 @bot.command()
 async def add(ctx, left : int, right : int):
 	"""Adds two numbers together."""
+	print(left + " + " + right)
 	await ctx.send(left + right)
 
 bot.run(TOKEN)
