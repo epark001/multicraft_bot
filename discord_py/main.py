@@ -1,15 +1,16 @@
 import discord
 from discord.ext import commands
 import configparser
-from time import gmtime, strftime
+from time import strftime, localtime
 import os
 
 #startup sequence
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-print("---------------------")
-#print("|2021-01-24 22:11:56|"
-print("|"+strftime("%Y-%m-%d %H:%M:%S",gmtime())+"|")
-print("---------------------")
+print("-----------------------------")
+#print("|2021-01-24 Wed 22:11:56|"
+#strftime("%Y-%m-%d %a %H:%M:%S %Z",localtime())
+print("|"+strftime("%Y-%m-%d %a %H:%M:%S %Z",localtime())+"|")
+print("-----------------------------")
 dir = os.path.dirname(__file__)
 print(dir)
 config = configparser.ConfigParser()
